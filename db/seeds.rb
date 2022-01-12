@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Item.destroy_all
+Cart.destroy_all
+
+puts "seeding"
+
+u1 = User.create(first_name: "Robbin", last_name: "Miller", email: "robby@gmail.com", phone_number: "347-123-1234", street: "123 Crown St", city: "Brooklyn", state: "NY", zip:11213 , username: "RobTheGuy", password: "1234")
+u2 = User.create(first_name: "Tiffany", last_name: "Tam", email: "tiff@gmail.com", phone_number:"347-321-4321", street: "456 Union St", city: "New York", state: "NY", zip:12345 , username: "tamtamslam", password: "4321")
+u3 = User.create(first_name: "Elias", last_name: "Kapeluschnik", email: "elikape@gmail.com", phone_number:"347-419-1516", street: "558 Kingston Ave", city: "Brooklyn", state: "NY", zip:11203 , username: "elikape760", password: "5678")
+
+i1 = Item.create(name: "Shirt", image: "http://www.fidicleaners.com/uploads/9/9/3/3/9933903/s812485884773593949_p9_i1_w225.jpeg", price:2.50 , quantity: 1)
+i2 = Item.create(name: "Pants", image: "http://www.fidicleaners.com/uploads/9/9/3/3/9933903/s812485884773593949_p4_i1_w177.jpeg", price:8.00 , quantity: 1)
+i3 = Item.create(name: "Dress", image: "http://www.fidicleaners.com/uploads/9/9/3/3/9933903/s812485884773593949_p11_i1_w161.jpeg", price:16.00 , quantity: 1)
+
+c1 = Cart.create(user_id: u2.id, item_id: i1.id)
+
+puts "done seeding"

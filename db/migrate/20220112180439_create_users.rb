@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :state
       t.integer :zip
       t.string :username
-      t.string :password
+      t.string :password_digest
 
       t.timestamps
     end

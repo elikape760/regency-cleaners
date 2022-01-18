@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :contacts, only: [:create, :index]
+  resources :testimonials
   resources :carts, only: [:index]
   resources :items, only: [:index, :show]
   resources :users

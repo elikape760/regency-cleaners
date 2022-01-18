@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-
+// import { Button } from 'semantic-ui-react'
 // import earth from "./images/world.jpg"
 
-function Navbar({ user, setUser}) {
+function Navbar({ user, setUser, countCartItems }) {
 
     function handleLogoutClick() {
         fetch("/logout", {
@@ -16,24 +16,31 @@ function Navbar({ user, setUser}) {
     }
 
     return (
-        <header className="img-header">
-            <h1 className="header-text">Regency Cleaners</h1>
-           
-            <div className="nav-link">
+        <header className="block row center">
+            <div>
+                <h1>Regency Cleaners</h1>
                 <div>
-                    <Link to="/">Home</Link>
+                    <Link  to="/">Home</Link> <br />
                 </div>
-                <div >
+                <div>
                     {user ? (
                         <>
-                            <Link to="/home/"></Link>
-                            <button onClick={handleLogoutClick}>Logout</button>
+                            <Link to="/home/pickup">pickup</Link> <Link to="/home/pickup/cart">
+                                Cart {' '}
+                                {countCartItems ? (
+                                    <button className="badge">{countCartItems}</button>
+                                ) : (
+                                    ''
+                                )}
+                            </Link>{''} <Link to="/home/pickup/contact">Contact Us</Link> <Link  onClick={handleLogoutClick}>Logout</Link> 
+
                         </>
 
                     ) : (
                         <>
-                            {/* <Link to="/signup">Signup</Link> */}
-                            {/* <Link to="/login">Login</Link> */}
+                            <Link  to="/signup">Signup</Link>
+                            <br />
+                            <Link  to="/login">Login</Link>
                         </>
                     )}
                 </div>

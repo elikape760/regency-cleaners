@@ -5,8 +5,8 @@ function ItemList({ items, onAdd }) {
     return (
         <main className=" block col-2">
             <h2>Request Pickup</h2>
-            <div className="">
-                <Card.Group>
+            <div >
+                <Card.Group >
                     {items.map((item) => {
                         return (
                             <ItemCard key={item.id} item={item} onAdd={onAdd} />

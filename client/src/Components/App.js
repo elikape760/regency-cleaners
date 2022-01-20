@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Home";
 import Login from "./Login";
 import SignUp from "./SignUp";

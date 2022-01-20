@@ -19,6 +19,42 @@ body {
     color: #EA1C2C;
 }
 
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+.scroll {
+    border: black solid 0.1rem;
+    margin: 4px, 4px;
+    padding: 4px;
+    /* background-color: #08c708; */
+    /* width: 300px; */
+    overflow-x: scroll;
+    /* overflow-y: hidden; */
+    white-space: nowrap;
+    display: block;
+}
+
+.item {
+    display: inline-block;
+}
+
+@media (max-width: 1200) {
+    #headingGroup h1 {
+        background-color: #EA1C2C;
+        font-weight: 100;
+        font-size: 3rem;
+}
+
+}
+
+
+
 
 /* h1,
 h2,
@@ -203,8 +239,8 @@ h3 {
     height: 1rem;
 } */
 
-/* .social-container {
-    background: #eee;
+ .social-container {
+    /* background: #eee; */
     padding: 25px 50px;
 }
 
@@ -224,7 +260,7 @@ a.facebook {
 
 a.instagram {
     color: black;
-} */
+} 
 
 /* @media (min-width: 800px) {
     p 

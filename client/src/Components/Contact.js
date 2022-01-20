@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Form } from 'semantic-ui-react'
+// import { Form } from 'semantic-ui-react'
 
 function Contact({ handleContact }) {
     const [first_name, setFirst_name] = useState("")
@@ -37,51 +37,59 @@ function Contact({ handleContact }) {
 
 
     return (
-        <>
-        <h1>Contact Us</h1>
-
-            <Form onSubmit={handleSubmit}>
-                <Form.Group widths='equal' >
-                    <Form.Input
-                        type='text'
-                        fluid label='First name'
-                        placeholder='First name'
-                        value={first_name}
-                        onChange={(e) => setFirst_name(e.target.value)}
-                    />
-                    <Form.Input
-                        type='text'
-                        fluid label='Last name'
-                        placeholder='Last name'
-                        value={last_name}
-                        onChange={(e) => setLast_name(e.target.value)}
-                    />
-                    <Form.Input
-                        type='text'
-                        fluid label='Phone'
-                        placeholder='Phone'
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
-                    <Form.Input
-                        type='text'
-                        fluid label='Email'
-                        placeholder='Email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.TextArea
-                    type='text'
-                    label='Contact us'
-                    placeholder='Tell us more ...'
-                    value={about}
-                    onChange={(e) => setAbout(e.target.value)}
-                />
-                {/* <Form.Checkbox label='I agree to the Terms and Conditions' /> */}
-                <Form.Button>Submit</Form.Button>
-            </Form>
-        </>
+        <div className='row'>
+            <h1 className='text-center'>Contact Us</h1>
+            <div className="col-6 offset-3">
+                <form onSubmit={handleSubmit}>
+                    <div className='mb-3'>
+                        <label className="form-label" for="first_name">First Name</label>
+                        <input className='form-control'
+                            type='text'
+                            placeholder='John'
+                            value={first_name}
+                            onChange={(e) => setFirst_name(e.target.value)}
+                        />
+                    </div>
+                    <div className='mb-3'>
+                        <label className="form-label" for="last_name">Last Name</label>
+                        <input className='form-control'
+                            type='text'                            
+                            placeholder='Smith'
+                            value={last_name}
+                            onChange={(e) => setLast_name(e.target.value)}
+                        />
+                    </div>
+                    <div className='mb-3'>
+                        <label className="form-label" for="phone">Phone</label>
+                        <input className='form-control'
+                            type='text'                            
+                            placeholder='718-123-4567'
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                        />
+                    </div>
+                    <label className="form-label" for="email">Email</label>
+                    <div className='mb-3'>
+                        <input className='form-control'
+                            type='text'
+                            placeholder='johnSmith@mail.com'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <label className="form-label" for="about">Comment</label>
+                    <textarea className='form-control'
+                        type='text'                        
+                        placeholder='Tell us more ...'
+                        value={about}
+                        onChange={(e) => setAbout(e.target.value)}
+                    ></textarea>
+                    <div className="mb-3">
+                        <button className='btn btn-success'>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
 

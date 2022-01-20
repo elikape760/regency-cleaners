@@ -74,11 +74,11 @@ function App() {
 
 
   return (
-    <>
+    <body className="d-flex flex-column vh-100">
       <Navbar
         user={user} setUser={setUser} countCartItems={cartItems.length}
       />
-      <main>
+      <main className="container mt-5">
         {user ? (
           <Switch>
             {/* <Route path="/home">
@@ -122,9 +122,9 @@ function App() {
             </Route>
           </Switch>
         )}
-        <Footer/>
       </main>
-    </>
+        <Footer/>
+    </body>
   );
 }
 

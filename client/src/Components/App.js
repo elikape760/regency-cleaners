@@ -75,14 +75,12 @@ function App() {
 
   return (
     <body className="d-flex flex-column vh-100">
-      <Navbar
-        user={user} setUser={setUser} countCartItems={cartItems.length}
-      />
-      <main className="container mt-5">
+        <Navbar
+          user={user} setUser={setUser} countCartItems={cartItems.length}
+        />
+      <main className="container bg-light mt-md-5 mt-lg-0">
         {user ? (
           <Switch>
-            {/* <Route path="/home">
-            </Route> */}
 
             <Route path="/home/pickup/contact">
               <Contact handleContact={handleContact} />
@@ -99,15 +97,34 @@ function App() {
             </Route>
 
 
-            <Route path="/">
-              <Home user={user} />
+            <Route path="/home">
+              
               <HomePage />
               <Testimonial />
+            </Route>
+
+            <Route path="/">
+              <Home />
             </Route>
 
           </Switch>
         ) : (
           <Switch>
+
+            <Route path="/home/pickup/contact">
+              <Contact handleContact={handleContact} />
+            </Route>
+
+            <Route path="/home/pickup/cart">
+              <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+            </Route>
+
+            <Route path="/home/pickup">
+              <div className="row">
+                <ItemList items={items} onAdd={onAdd} />
+              </div>
+            </Route>
+
             <Route path="/signup">
               <SignUp setUser={setUser} />
             </Route>
@@ -116,14 +133,20 @@ function App() {
               <Login setUser={setUser} />
             </Route>
 
-            <Route path="/">
-              <Home user={user} />
+            <Route path="/home">
+             
               <HomePage />
+              <Testimonial />
             </Route>
+
+            <Route path="/">
+              <Home />
+            </Route>
+
           </Switch>
         )}
       </main>
-        <Footer/>
+      <Footer />
     </body>
   );
 }

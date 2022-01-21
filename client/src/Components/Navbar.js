@@ -17,7 +17,7 @@ function Navbar({ user, setUser, countCartItems }) {
 
     return (
         <>
-            <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <nav id="mainNavbar" className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">Regency Cleaners</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
@@ -29,7 +29,7 @@ function Navbar({ user, setUser, countCartItems }) {
                             <>
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/">Home</Link>
+                                        <Link className="nav-link" to="/home">Home</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/home/pickup">Pickup</Link>
@@ -57,11 +57,33 @@ function Navbar({ user, setUser, countCartItems }) {
                                 <div className="collapse navbar-collapse" id="navLinks">
                                     <ul className="navbar-nav">
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/signup">Signup</Link>
+                                            <Link className="nav-link" to="/home">Home</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to="/login">Login</Link>
+                                            <Link className="nav-link" to="/home/pickup">Pickup</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/home/pickup/cart">
+                                                Cart {' '}
+                                                {countCartItems ? (
+                                                    <button className="badge">{countCartItems}</button>
+                                                ) : (
+                                                    ''
+                                                )}
+                                            </Link>{''}
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/home/pickup/contact">Contact Us</Link>
+                                        </li>
+
+                                        <nav className=" nav nav-masthead justify-content-center float-md-right">
+                                            <li className="nav-item">
+                                                <Link className="nav-link" to="/signup">Signup</Link>
+                                            </li>
+                                            <li className="nav-item">
+                                                <Link className="nav-link" to="/login">Login</Link>
+                                            </li>
+                                        </nav>
                                     </ul>
                                 </div>
                             </>

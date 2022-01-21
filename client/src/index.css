@@ -1,5 +1,28 @@
-body {
-    background-color: #f5d9d5;
+.container {
+    background: rgb(225, 231, 233);
+    /* border: red solid; */
+}
+
+.cover-container {
+    max-width: 60vw;
+}
+
+
+.shirt h2 {
+    color: #EA1C2C;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+
+.shirt p {
+    color: orange;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content {
+    margin-bottom: 100px;
 }
 
 #mainNavbar {
@@ -28,6 +51,10 @@ body {
     font-size: 4rem;
 }
 
+/* .navbar.scrolled {
+    background-color: greenyellow;
+} */
+
 .scroll {
     border: black solid 0.1rem;
     margin: 4px, 4px;
@@ -44,9 +71,9 @@ body {
     display: inline-block;
 }
 
-@media (max-width: 1200) {
+@media (max-width: 1300px) {
     #headingGroup h1 {
-        background-color: #EA1C2C;
+        /* background-color: #EA1C2C; */
         font-weight: 100;
         font-size: 3rem;
 }

@@ -12,6 +12,8 @@ import Testimonial from "./Testimonial";
 import Contact from "./Contact";
 import Cart from "./Cart";
 import Footer from "./Footer";
+import Admin from "./Admin";
+import UserList from "./UserList";
 
 
 
@@ -20,6 +22,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [contact, setContacts] = useState([])
   const [cartItems, setCartItems] = useState([]);
+  const [admin, setAdmin] = useState(false)
+
   // const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -31,12 +35,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/items')
+    fetch('/items')
       .then(resp => resp.json())
       .then(items => {
         setItems(items)
       })
   }, [])
+
+
 
   function handleContact(newContact) {
     const updatedContactsArray = [...contact, newContact];
@@ -72,14 +78,22 @@ function App() {
     }
   };
 
+  function handleDeleteUser(id) {
+    const updatedUsersArray = user.filter((user) => user.id !== id);
+    setUser(updatedUsersArray)
+  }
+
 
   return (
     <div className="d-flex flex-column vh-100">
+
       <Navbar
         user={user} setUser={setUser} countCartItems={cartItems.length}
       />
+
       <main className="container-fluid bg-light mt-md-5 mt-lg-0">
         {user ? (
+
           <Switch>
 
             <Route path="/home/pickup/contact">
@@ -96,14 +110,22 @@ function App() {
               </div>
             </Route>
 
-
             <Route path="/home">
               <HomePage />
               <Testimonial />
             </Route>
 
+
+
             <Route path="/">
               <Home />
+            </Route>
+
+          </Switch>
+        ) : admin ? (
+          <Switch>
+            <Route path="/admin">
+              <UserList user={user} setUser={setUser} handleDeleteUser={handleDeleteUser} />
             </Route>
 
           </Switch>
@@ -119,7 +141,7 @@ function App() {
             </Route>
 
             <Route path="/home/pickup">
-              <div className="row">
+              <div >
                 <ItemList items={items} onAdd={onAdd} />
               </div>
             </Route>
@@ -132,8 +154,11 @@ function App() {
               <Login setUser={setUser} />
             </Route>
 
-            <Route path="/home">
+            <Route path="/admin">
+              <Admin admin={admin} setAdmin={setAdmin} />
+            </Route>
 
+            <Route path="/home">
               <HomePage />
               <Testimonial />
             </Route>

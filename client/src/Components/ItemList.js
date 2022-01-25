@@ -3,17 +3,19 @@ import ItemCard from "./ItemCard"
 
 function ItemList({ items, onAdd }) {
     return (
-        <main className="card">
+        <main className="container">
             <div className="row">
-                <h2>Request Pickup</h2>
-                <div >
-                    <>
-                        {items.map((item) => {
-                            return (
-                                <ItemCard key={item.id} item={item} onAdd={onAdd} />
-                            )
-                        })}
-                    </>
+                <div className="col-sm offset-2 col-xl-6 offset-2">
+                    <h2>Request Pickup</h2>
+                    <div >
+                        <>
+                            {items.map((item) => {
+                                return (
+                                    <ItemCard key={item.id} item={item} onAdd={onAdd} />
+                                )
+                            })}
+                        </>
+                    </div>
                 </div>
             </div>
         </main>

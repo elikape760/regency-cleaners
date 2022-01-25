@@ -3,26 +3,23 @@ import React from 'react'
 
 function ItemCard({ item, onAdd }) {
   return (
-    <div className="card mb-3" >
-      <div className="row ">
-        <div className="card-body">
-          <img className="img-fluid" src={item.image} alt={item.name} />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{item.name}</h5>
-            <p className="card-text">{item.description}</p>
-            <p className="card-text">
-              <small className="text-muted">${item.price}</small>
-            </p>
-            <button type="button" class="btn btn-outline-primary" onClick={() => onAdd(item)}>Add To Cart</button>
-          </div>
-        </div>
+    <div className="card-body">
+      <div className="col-1">
+        <img className=" img-thumbnail rounded float-end" src={item.image} alt={item.name} />
+      </div>
+
+      <div className="col-0 mb-3">
+        <h5 className="card-title">{item.name}</h5>
+        <p className="card-text">{item.description}</p>
+        <p className="card-text">
+          <small className="text-muted">${item.price}</small>
+        </p>
+        <button type="button" class="btn btn-outline-primary" onClick={() => onAdd(item)}>Add To Cart</button>
       </div>
     </div>
-    )
-  }
-  export default ItemCard
+  )
+}
+export default ItemCard
   // <Card >
   //   <Card.Content>
   //     {/* <Image

@@ -74,11 +74,11 @@ function App() {
 
 
   return (
-    <body className="d-flex flex-column vh-100">
-        <Navbar
-          user={user} setUser={setUser} countCartItems={cartItems.length}
-        />
-      <main className="container bg-light mt-md-5 mt-lg-0">
+    <div className="d-flex flex-column vh-100">
+      <Navbar
+        user={user} setUser={setUser} countCartItems={cartItems.length}
+      />
+      <main className="container-fluid bg-light mt-md-5 mt-lg-0">
         {user ? (
           <Switch>
 
@@ -98,7 +98,6 @@ function App() {
 
 
             <Route path="/home">
-              
               <HomePage />
               <Testimonial />
             </Route>
@@ -134,7 +133,7 @@ function App() {
             </Route>
 
             <Route path="/home">
-             
+
               <HomePage />
               <Testimonial />
             </Route>
@@ -147,7 +146,7 @@ function App() {
         )}
       </main>
       <Footer />
-    </body>
+    </div>
   );
 }
 

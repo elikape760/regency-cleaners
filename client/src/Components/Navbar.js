@@ -19,7 +19,7 @@ function Navbar({ user, setUser, countCartItems }) {
         <>
             <nav id="mainNavbar" className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Regency Cleaners</a>
+                    <Link className="navbar-brand" to="/">Regency Cleaners</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
                         aria-controls="Toggle navigation" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@ function Navbar({ user, setUser, countCartItems }) {
                                         <Link className="nav-link" to="/home/pickup/contact">Contact Us</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" onClick={handleLogoutClick}>Logout</Link>
+                                        <Link className="nav-link" to="/login" onClick={handleLogoutClick}>Logout</Link>
                                     </li>
                                 </ul>
                             </>
@@ -97,49 +97,3 @@ function Navbar({ user, setUser, countCartItems }) {
 }
 
 export default Navbar;
-{/* <navbar id='mainNavbar' className='navbar navbar-expand-lg navbar-light bg-light' >
-    <a href="#" className="navbar-brand">Regency Cleaners</a>
-    <button className="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation" >
-        <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navLinks"> {
-        user ? (
-            <>
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/home/pickup">Pickup</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/home/pickup/cart">
-                            Cart {' '}
-                            {countCartItems ? (
-                                <button className="badge">{countCartItems}</button>
-                            ) : (
-                                ''
-                            )}
-                        </Link>{''}
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/home/pickup/contact">Contact Us</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" onClick={handleLogoutClick}>Logout</Link>
-                    </li>
-                </ul>
-            </>
-        ) : (
-            <>
-                <div className="collapse navbar-collapse" id="navLinks">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/signup">Signup</Link> <Link to="/login">Login</Link>
-                        </li>
-                    </ul>
-                </div>
-            </>
-        )
-    } </div>
-</navbar> */}

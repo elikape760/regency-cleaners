@@ -8,11 +8,15 @@ function Footer() {
 
     return (
         <>
-            <footer className="footer bg-light py-3 mt-auto">
-                <div className="container">
-                    <span className="text-muted">&copy;Regency Dry Cleaners</span>
-                </div>
-                <div class="social-container">
+            <footer id="footercontainer" >
+                <footer className="footer mb-5">
+                    <p>
+                        Regency Organic Cleaners - (718) 774-2211  - Address: 381 Kingston Ave, Brooklyn, NY 11213 Email: info@mysite.com <br /> <br />
+                        Operating Hours: <br /> Mon - Fri: 8am - 8pm Sunday: 9am - 8pm
+                    </p>
+                </footer>
+                <span >&copy;Regency Dry Cleaners</span>
+                <div className="social-container">
                     <a href="https://www.facebook.com/search/top?q=regency%20cleaners"
                         className="facebook social">
                         <FontAwesomeIcon icon={faFacebook} size="2x" />

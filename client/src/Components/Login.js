@@ -3,8 +3,6 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 
 
-import { Button, Form, Grid, Header, Image, Message,  Segment } from 'semantic-ui-react'
-
 function Login({ setUser }) {
 
     const [username, setUsername] = useState("")
@@ -28,46 +26,49 @@ function Login({ setUser }) {
     }
 
     return (
-        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-            <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' color='teal' textAlign='center'>
-                    <Image src='/logo.png' /> Log-in to your account
-                </Header>
-                <Form size='large' onSubmit={handleLoging} >
-                    <Segment stacked>
-                        <Form.Input
-                            type="text"
-                            id="username"
-                            placeholder='Username'
-                            autoComplete="off"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            fluid icon='user'
-                            iconPosition='left'
-                        />
-                        <Form.Input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            autoComplete="current-password"
-                            fluid
-                            icon='lock'
-                            iconPosition='left'
-                            placeholder='Password'
-                        />
-
-                        <Button color='teal' fluid size='large' type="submit">
-                            Login
-                        </Button>
-                    </Segment>
-                </Form>
-                <Message>
-                    New to us? 
-                    <Link to="/signup">Signup</Link>
-                </Message>
-            </Grid.Column>
-        </Grid>
+        <div className='container d-flex justify-content-center align-items-center mt-5'>
+            <div className="row">
+                <div className="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                    <div className="card shadow">
+                        <img src="https://images.unsplash.com/photo-1582479429421-321775166674?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="" className='card-img-top' />
+                        <div className="card-body">
+                            <h5 className='card-title'>Log In</h5>
+                            <form className='validated-form' onSubmit={handleLoging} >
+                                <div className="mb-3">
+                                    <input className='form-control'
+                                        type="text"
+                                        id="username"
+                                        placeholder='Username'
+                                        autoComplete="off"
+                                        autoFocus
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                    />
+                                </div>
+                                <div className='mb-3' >
+                                    <input className="form-control"
+                                        type="password"
+                                        id="password"
+                                        placeholder='Password'
+                                        autoComplete="current-password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                </div>
+                                <div className="d-grid gap-2">
+                                    <button className='btn btn-success' type="submit">
+                                        Login
+                                    </button>
+                                </div>
+                                <p> New to us?
+                                    <Link to="/signup"> Signup</Link>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

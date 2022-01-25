@@ -10,7 +10,7 @@ function Cart({ cartItems, onAdd, onRemove }) {
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
     return (
 
-        <div className="row mb-3">
+        <div className=" row mb-3 justify-content-left">
             <h1 className='text-center pt-2'>My Cart</h1>
             <div className="col-6 offset-3 pt-3">
                 <div>
@@ -18,8 +18,8 @@ function Cart({ cartItems, onAdd, onRemove }) {
                 </div>
                 {cartItems.map((product) => (
                     <div key={product.id}>
-                        <div class="card mb-3">
-                            <img src={product.image} class="card-img-top" alt={product.name} />
+                        <div class="card mb-3 ">
+                            <img src={product.image} class="card-img-top-rounded mx-auto d-block" alt={product.name} />
                             <div class="card-body">
                                 <h5 class="card-title">{product.name}:</h5>
                                 <p class="card-text">{product.description}description should go here:</p>
@@ -59,7 +59,7 @@ function Cart({ cartItems, onAdd, onRemove }) {
                         </div>
                         <hr></hr>
                         <div className='row'>
-                            <button className='btn btn-success' onClick={() => alert('Implement Checkout')}>Checkout</button>
+                            <button className='btn btn-info' onClick={() => alert('Implement Checkout')}>Checkout</button>
                         </div>
                     </>
                 )}

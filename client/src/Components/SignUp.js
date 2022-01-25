@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
 
 function SignUp({ setUser }) {
     const [first_name, setFirst_name] = useState("")
@@ -45,142 +45,147 @@ function SignUp({ setUser }) {
     }
 
     return (
-        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-            <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' color='teal' textAlign='center'>
-                    <Image src='/logo.png' /> Sign-Up
-                </Header>
-                <Form size='large' onSubmit={handleSignup}>
-                    <Segment stacked>
-                        <Form.Input
-                            fluid
-                            icon='id card'
-                            iconPosition='left'
-                            type="text"
-                            id="first_name"
-                            placeholder="First Name"
-                            autoComplete="off"
-                            value={first_name}
-                            onChange={(e) => setFirst_name(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='id card'
-                            iconPosition='left'
-                            type="text"
-                            id="last_name"
-                            placeholder="Last Name"
-                            autoComplete="off"
-                            value={last_name}
-                            onChange={(e) => setLast_name(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='phone'
-                            iconPosition='left'
-                            type="text"
-                            placeholder="Phone Number"
-                            id="phone_number"
-                            autoComplete="off"
-                            value={phone_number}
-                            onChange={(e) => setPhone_number(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid icon='mail' iconPosition='left' placeholder='E-mail address'
-                            type="text"
-                            id="email"
-                            autoComplete="off"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-                        <Form.Input
-                            fluid
-                            icon='home'
-                            iconPosition='left'
-                            type="text"
-                            id="street"
-                            placeholder="Street"
-                            autoComplete="off"
-                            value={street}
-                            onChange={(e) => setStreet(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='home'
-                            iconPosition='left'
-                            type="text"
-                            placeholder="City"
-                            id="city"
-                            autoComplete="off"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='home'
-                            iconPosition='left'
-                            type="text"
-                            id="state"
-                            placeholder="State"
-                            autoComplete="off"
-                            value={state}
-                            onChange={(e) => setState(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='home'
-                            iconPosition='left'
-                            type="text"
-                            placeholder="Zip Code"
-                            id="zip"
-                            autoComplete="off"
-                            value={zip}
-                            onChange={(e) => setZip(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='user'
-                            iconPosition='left'
-                            type="text"
-                            placeholder="Username"
-                            id="username"
-                            autoComplete="off"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                        <Form.Input
-                            fluid
-                            icon='lock'
-                            iconPosition='left'
-                            placeholder='Password'
-                            type='password'
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            autoComplete="current-password"
-                        />
-                        <Form.Input
-                            fluid
-                            icon='lock'
-                            iconPosition='left'
-                            placeholder='Confirm Password'
-                            type="password"
-                            id="password_confirmation"
-                            value={passwordConfirmation}
-                            autoComplete="current-password"
-                            onChange={(e) => setPasswordConfirmation(e.target.value)}
-                        />
-                        <Button color='teal' fluid size='large' type="submit" >
-                            Sign-up
-                        </Button>
-                    </Segment>
-                </Form>
-                <Message>
-                    <p>Already have an account? <Link to="/login">Login</Link></p>
-                    {/* Already have an account? */}
-                     {/* <Link to="/login">Login</Link> */}
-                </Message>
-            </Grid.Column>
-        </Grid>
+        <div >
+
+            <div className='container d-flex justify-content-center align-items-center mt-5'>
+                <div className="row">
+                    <div className="col-xl-12 ">
+                        <div className="card shadow">
+                            <img src="https://images.unsplash.com/photo-1516528706953-b0907c20ef78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNsZWFuJTIwY2xvdGhlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" className='card-img-top img-fluid ' />
+                            <div className="card-body">
+                                <h5 className='card-title'>Sign Up</h5>
+                                <form className='validated-form' onSubmit={handleSignup}>
+                                    <div className='mb-3' >
+                                        <input className="form-control"
+                                            type="text"
+                                            id="first_name"
+                                            placeholder="First Name"
+                                            autoComplete="off"
+                                            autoFocus
+                                            value={first_name}
+                                            onChange={(e) => setFirst_name(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            fluid
+                                            icon='id card'
+                                            iconPosition='left'
+                                            type="text"
+                                            id="last_name"
+                                            placeholder="Last Name"
+                                            autoComplete="off"
+                                            value={last_name}
+                                            onChange={(e) => setLast_name(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            fluid
+                                            icon='phone'
+                                            iconPosition='left'
+                                            type="text"
+                                            placeholder="Phone Number"
+                                            id="phone_number"
+                                            autoComplete="off"
+                                            value={phone_number}
+                                            onChange={(e) => setPhone_number(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            placeholder='E-mail address'
+                                            type="text"
+                                            id="email"
+                                            autoComplete="off"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            type="text"
+                                            id="street"
+                                            placeholder="Street"
+                                            autoComplete="off"
+                                            value={street}
+                                            onChange={(e) => setStreet(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            type="text"
+                                            placeholder="City"
+                                            id="city"
+                                            autoComplete="off"
+                                            value={city}
+                                            onChange={(e) => setCity(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            type="text"
+                                            id="state"
+                                            placeholder="State"
+                                            autoComplete="off"
+                                            value={state}
+                                            onChange={(e) => setState(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            type="text"
+                                            placeholder="Zip Code"
+                                            id="zip"
+                                            autoComplete="off"
+                                            value={zip}
+                                            onChange={(e) => setZip(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            type="text"
+                                            placeholder="Username"
+                                            id="username"
+                                            autoComplete="off"
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            placeholder='Password'
+                                            type='password'
+                                            id="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            autoComplete="current-password"
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input className="form-control"
+                                            placeholder='Confirm Password'
+                                            type="password"
+                                            id="password_confirmation"
+                                            value={passwordConfirmation}
+                                            autoComplete="current-password"
+                                            onChange={(e) => setPasswordConfirmation(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <button className='btn btn-success' type="submit" >
+                                            Sign-up
+                                        </button>
+                                    </div>
+                                    <p>Already have an account? <Link to="/login">Login</Link></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     )
 }
 

@@ -1,6 +1,18 @@
-.container {
-    background: rgb(225, 231, 233);
-    /* border: red solid; */
+#landing {
+    height: 100vh;
+    background-image:
+    url("https://images.unsplash.com/photo-1520434901111-8e9bcb42c628?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.05rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+#landing h1 {
+    font-weight: 800;
+}
+#landing p {
+    font-weight: 700;
 }
 
 .cover-container {
@@ -36,6 +48,11 @@
 
 #mainNavbar .nav-link:hover {
     color: #EA1C2C; 
+}
+
+#mainNavbar .nav-link:active {
+    color: rgba(255,255,255,0.5);
+    border-bottom-color:black ;
 }
 
 #mainNavbar .navbar-brand {
@@ -241,15 +258,16 @@ h3 {
     height: 10em;
     overflow: scroll;
 } */
-/* 
+
 #footercontainer {
     position: relative;
     margin-top: 10rem;
     max-width: 1600px;
     text-align: center;
-} */
+    background: #eee;
+}
 
-/* .footer {
+.footer {
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -258,8 +276,8 @@ h3 {
     bottom: 0;
     
     padding: 1.5rem;
-    background: #eee;
-} */
+    
+}
 
 /* #whitespace {
     display: block;

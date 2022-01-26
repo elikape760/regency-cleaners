@@ -11,12 +11,11 @@ function Footer() {
             <footer id="footercontainer" >
                 <footer className="footer mb-5">
                     <p>
-            <br />
-                        Regency Organic Cleaners: <br /> Phone: (718) 774-2211  - Address: 381 Kingston Ave, Brooklyn, NY 11213 - Email: info@mysite.com <br /> <br />
+                        <h6>Regency Organic Cleaners:</h6>
+                        <br /> Phone: (718) 774-2211 <br /> Email: info@mysite.com  <br /> Address: 381 Kingston Ave, Brooklyn, NY 11213 <br /> <br />
                         Operating Hours: <br /> Mon - Fri: 8am - 7pm Sunday: 10am - 5pm
                     </p>
                 </footer>
-                <hr />
                 <footer>
                     <div className="social-container">
                         <a href="https://www.facebook.com/search/top?q=regency%20cleaners"
@@ -27,8 +26,8 @@ function Footer() {
                             className="instagram social">
                             <FontAwesomeIcon icon={faInstagram} size="2x" />
                         </a>
-                        <br /> <br />
-                    <span >&copy;Regency Dry Cleaners</span>
+                        <br /> 
+                        <span >&copy;Regency Dry Cleaners</span>
                     </div>
                 </footer>
             </footer>

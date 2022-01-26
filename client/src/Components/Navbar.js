@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 // import { Button } from 'semantic-ui-react'
 // import earth from "./images/world.jpg"
 
-function Navbar({ user, setUser, countCartItems }) {
+function Navbar({ user, admin, setAdmin, setUser, countCartItems }) {
 
     function handleLogoutClick() {
         fetch("/logout", {
@@ -11,6 +11,7 @@ function Navbar({ user, setUser, countCartItems }) {
             .then((r) => {
                 if (r.ok) {
                     setUser(null);
+                    setAdmin(null);
                 }
             });
     }
@@ -52,6 +53,12 @@ function Navbar({ user, setUser, countCartItems }) {
                                     </li>
                                 </ul>
                             </>
+                        ) : admin ? (
+                            <ul>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/login" onClick={handleLogoutClick}>Logout</Link>
+                                </li>
+                            </ul>
                         ) : (
                             <>
                                 <div className="collapse navbar-collapse" id="navLinks">

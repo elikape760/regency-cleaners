@@ -1,35 +1,57 @@
 import { useEffect, useState } from 'react';
 import UserCard from './UserCard';
+import UserPage from './UserPage';
 
 function UserList({ handleDeleteUser }) {
 
-    const [viewUser, setViewUser] = useState([])
+    const [users, setUsers] = useState([])
+    const [clickedUser, setclickedUser] = useState(false)
+
 
     useEffect(() => {
         fetch('http://localhost:3000/users')
             .then(resp => resp.json())
-            .then(viewUser => {
-                setViewUser(viewUser)
-                // console.log(viewUser);
+            .then(users => {
+                setUsers(users)
+                // console.log(users);
             })
     }, [])
 
+    function handleDeleteClick(e) {
+        e.preventDefault()
+
+        fetch(`http://localhost:3000/users/${users.id}`, {
+            method: "DELETE",
+            body: JSON.stringify({ user_id: users.id })
+
+
+        })
+            .then((r => r.json()))
+            .then(data => handleDeleteUser(data));
+
+        handleDeleteUser(users.id);
+    }
+
+
+    function goBack() {
+        setclickedUser(false)
+    }
+
     return (
-        <div className="container-fluid ">
-            <div className="row">
-                <div className="col-sm-8 col-md-8 col-xl-5 offset-3" >
-                    <h2 className='align-items-left'>Users</h2>
-                    <div className="card">
-                        <>
-                            {viewUser.map((viewUser) => {
-                                return (
-                                    <UserCard key={viewUser.id} viewUser={viewUser} setViewUser={setViewUser} handleDeleteUser={handleDeleteUser} />
-                                )
-                            })}
-                        </>
-                    </div>
-                </div>
-            </div>
+        <div className="row">
+            <>
+                {!clickedUser ? users.map((user) => {
+                    return (
+                        <UserCard setclickedUser={setclickedUser} key={user.id} user={user} setUsers={setUsers} />
+                    )
+                })
+                    :
+                    [clickedUser].map((user) => {
+                        return (
+                            <UserPage goBack={goBack} setclickedUser={setclickedUser} key={user.id} user={user} setUsers={setUsers} handleDeleteClick={handleDeleteClick} />
+                        )
+                    })}
+            </>
         </div>
     );
 }

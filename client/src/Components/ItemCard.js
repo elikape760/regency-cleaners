@@ -7,7 +7,7 @@ function ItemCard({ item, onAdd }) {
       <div className="col-0 mb-3">
         <h5 className="card-title">{item.name}</h5>
         <div className="col-1">
-          <img className="card-img-top" src={item.image} alt={item.name} />
+          <img className="card-image" src={item.image} alt={item.name} />
         </div> <br />
         <p className="card-text">{item.description}</p>
         <p className="card-text">

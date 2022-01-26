@@ -20,11 +20,12 @@ function HomePage() {
                     <div className="col-lg-6">
                         <div id='headingGroup' className='text-black text-center d-none d-lg-block mt-5'>
                             <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
+                            <h3>We Make Dirty Things Clean. It's Our Thing!</h3>
+                            {/* <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
                             <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
                             <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
                             <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
-                            <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
-                            <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1>
+                            <h1 className='display-2'>CH<span>/</span>Regency<span>/</span>Cleaners</h1> */}
                         </div>
                     </div>
                     <div className="col-lg-6">

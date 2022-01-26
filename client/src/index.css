@@ -68,6 +68,22 @@
     font-size: 4rem;
 }
 
+.my-fancy-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.card-image {
+    max-height: 120px;
+}
+
+.cart-image {
+    max-height: 50px;
+    max-width: 50px;
+}
+
 /* .navbar.scrolled {
     background-color: greenyellow;
 } */

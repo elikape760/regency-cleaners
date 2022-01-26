@@ -20,7 +20,7 @@ function Cart({ cartItems, onAdd, onRemove }) {
     return (
         <div className="container">
             <div className=" row">
-                <div className="col-sm offset-2 col-xl-8 offset-2">
+                <div className="my-fancy-grid col-sm offset-2 col-xl-8 offset-2">
                     <div className="card-body">
                         <h1 className='text-center pt-2'>My Cart</h1>
                         <div className="col-6 offset-3 pt-3">
@@ -30,10 +30,13 @@ function Cart({ cartItems, onAdd, onRemove }) {
                             {cartItems.map((product) => (
                                 <div key={product.id}>
                                     <div class="card mb-3 ">
-                                        <img src={product.image} class="card-img-top-rounded mx-auto d-block" alt={product.name} />
-                                        <div class="card-body">
+                                        <img src={product.image} class="cart-image" alt={product.name} />
+                                        <div class="card-body d-inline">
                                             <h5 class="card-title">{product.name}:</h5>
-                                            <p class="card-text">{product.description}description should go here:</p>
+                                            {product.qty} x ${(product.qty * product.price).toFixed(2)}
+                                        </div>
+                                        <div className='d-inline'>
+                                            {/* {product.qty} x ${(product.qty * product.price).toFixed(2)} */}
                                         </div>
                                         <div class="card-body">
                                             <button className='btn btn-primary' onClick={() => onAdd(product)} basic color='blue'>
@@ -42,9 +45,6 @@ function Cart({ cartItems, onAdd, onRemove }) {
                                             <button className='btn btn-danger' onClick={() => onRemove(product)} basic color='red'>
                                                 -
                                             </button>
-                                        </div>
-                                        <div className='d-inline'>
-                                            {product.qty} x ${(product.qty * product.price).toFixed(2)}
                                         </div>
                                     </div>
                                 </div>

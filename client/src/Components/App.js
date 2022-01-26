@@ -14,8 +14,7 @@ import Cart from "./Cart";
 import Footer from "./Footer";
 import Admin from "./Admin";
 import UserList from "./UserList";
-
-
+import Edit from "./Edit"
 
 function App() {
   const [items, setItems] = useState([]);
@@ -53,7 +52,9 @@ function App() {
   //   return item.name.toLowerCase().includes(searchTerm.toLowerCase())
   // })
 
-  const onAdd = (item) => {
+  const onAdd = (item, e) => {
+    e.preventDefault();
+
     const exist = cartItems.find(x => x.id === item.id);
     if (exist) {
       setCartItems(cartItems.map(x =>
@@ -83,12 +84,23 @@ function App() {
     setUser(updatedUsersArray)
   }
 
+  function handleUpdatedUser(updatedUser) {
+    const updatedUsersArray = user.map((user) => {
+      if (user.id === updatedUser.id) {
+        return updatedUser;
+      } else {
+        return user;
+      }
+    });
+    setUser(updatedUsersArray)
+  }
+
 
   return (
     <div className="d-flex flex-column vh-100">
 
       <Navbar
-        user={user} setUser={setUser} countCartItems={cartItems.length}
+        user={user} setUser={setUser} countCartItems={cartItems.length} admin={admin} setAdmin={setAdmin}
       />
 
       <main className="container-fluid bg-light mt-md-5 mt-lg-0">
@@ -124,8 +136,17 @@ function App() {
           </Switch>
         ) : admin ? (
           <Switch>
+            {/* 
+            <Route path='/admin/user'>
+              <UserPage />
+            </Route> */}
+
+            <Route path="/admin/edit">
+              <Edit handleUpdatedUser={handleUpdatedUser} user={user} />
+            </Route>
+
             <Route path="/admin">
-              <UserList user={user} setUser={setUser} handleDeleteUser={handleDeleteUser} />
+              <UserList user={user} setUser={setUser} handleDeleteUser={handleDeleteUser}  />
             </Route>
 
           </Switch>

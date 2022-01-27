@@ -1,8 +1,7 @@
 #landing {
-    height: 100vh;
-    background-image:
-    url("https://images.unsplash.com/photo-1520434901111-8e9bcb42c628?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-    background-size: cover;
+    height: 80vh;
+    background-image: url("./imgs/regency.jpg");
+    background-size: contain;
     background-position: center;
     text-shadow: 0 0.05rem rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
@@ -15,19 +14,24 @@
     font-weight: 700;
 }
 
+.home {
+    color: #ef4400;
+
+}
+
 .cover-container {
     max-width: 60vw;
 }
 
 
 .shirt h2 {
-    color: #EA1C2C;
+    color: #80BD3D;
     font-weight: 100;
     font-size: 2.5rem;
 }
 
 .shirt p {
-    color: orange;
+    color: #ef4400;
     font-weight: 100;
     font-size: 1.125rem;
     line-height: 2;
@@ -37,6 +41,12 @@
     margin-bottom: 100px;
 }
 
+#navLinks {
+    height: 10vh;
+    background-image: url("./imgs/regency.jpg");
+    background-size: cover;
+    background-position: center;
+}
 #mainNavbar {
     font-size: 1.5rem;
     font-weight: 100;
@@ -47,7 +57,7 @@
 }
 
 #mainNavbar .nav-link:hover {
-    color: #EA1C2C; 
+    color: #ef4400; 
 }
 
 #mainNavbar .nav-link:active {
@@ -56,16 +66,25 @@
 }
 
 #mainNavbar .navbar-brand {
-    color: #EA1C2C;
+    color: #ef4400; 
 }
 
 #headingGroup span {
-    color: #EA1C2C;
+    color: #ef4400;
 }
 
 #headingGroup h1 {
+    color: #80BD3D;
     font-weight: 100;
     font-size: 4rem;
+}
+
+#headingGroup h3 {
+    color: #ef4400;
+}
+
+.hanger {
+    max-width: 30px;
 }
 
 .my-fancy-grid {
@@ -76,12 +95,20 @@
 }
 
 .card-image {
+    
     max-height: 120px;
 }
 
 .cart-image {
-    max-height: 50px;
-    max-width: 50px;
+    max-height: 75px;
+    max-width: 75px;
+}
+
+.cart-grid{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    /* border-bottom: black solid 0.1px; */
 }
 
 /* .navbar.scrolled {

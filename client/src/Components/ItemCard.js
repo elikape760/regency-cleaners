@@ -11,7 +11,7 @@ function ItemCard({ item, onAdd }) {
         </div> <br />
         <p className="card-text">{item.description}</p>
         <p className="card-text">
-          <small className="text-muted">${item.price}</small>
+          <small className="text-muted">${item.price}0</small>
         </p>
         <button type="button" className="btn btn-outline-primary" onClick={() => onAdd(item)}>Add To Cart</button>
         <hr />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {useHistory} from 'react-router-dom'
+// import {useHistory} from 'react-router-dom'
 
 function Edit({ handleUpdatedUser, user }) {
 
@@ -11,7 +11,7 @@ function Edit({ handleUpdatedUser, user }) {
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
     const [zip, setZip] = useState('')
-    const history = useHistory()
+    // const history = useHistory()
 
 
 
@@ -32,6 +32,7 @@ function Edit({ handleUpdatedUser, user }) {
                 city: city,
                 state: state,
                 zip: zip,
+                
             }),
         })
             .then((r) => r.json())
@@ -47,7 +48,7 @@ function Edit({ handleUpdatedUser, user }) {
         setState("")
         setZip("")
 
-        history.push('/admin')
+      
 
     }
 

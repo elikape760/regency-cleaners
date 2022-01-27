@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-// import { Button } from 'semantic-ui-react'
-// import earth from "./images/world.jpg"
 
-function Navbar({ user, admin, setAdmin, setUser, countCartItems }) {
+function Navbar({ user, admin, setAdmin, setUser, countCartItems, url }) {
+
+   
 
     function handleLogoutClick() {
         fetch("/logout", {
@@ -18,7 +18,7 @@ function Navbar({ user, admin, setAdmin, setUser, countCartItems }) {
 
     return (
         <>
-            <nav id="mainNavbar" className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <nav  id="mainNavbar" className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">Regency Cleaners</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"

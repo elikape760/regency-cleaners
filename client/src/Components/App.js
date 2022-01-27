@@ -22,6 +22,7 @@ function App() {
   const [contact, setContacts] = useState([])
   const [cartItems, setCartItems] = useState([]);
   const [admin, setAdmin] = useState(false)
+  
 
   // const [searchTerm, setSearchTerm] = useState("");
 
@@ -52,8 +53,7 @@ function App() {
   //   return item.name.toLowerCase().includes(searchTerm.toLowerCase())
   // })
 
-  const onAdd = (item, e) => {
-    e.preventDefault();
+  const onAdd = (item) => {
 
     const exist = cartItems.find(x => x.id === item.id);
     if (exist) {

@@ -20,20 +20,20 @@ function Cart({ cartItems, onAdd, onRemove }) {
     return (
         <div className="container">
             <div className=" row">
-                <div className="my-fancy-grid col-sm offset-2 col-xl-8 offset-2">
+                <div className=" col-sm offset-2 col-xl-8 offset-2">
                     <div className="card-body">
                         <h1 className='text-center pt-2'>My Cart</h1>
                         <div className="col-6 offset-3 pt-3">
                             <div>
-                                {cartItems.length === 0 && <div>Cart Is Empty</div>}
+                                {cartItems.length === 0 && <h2>Cart Is Empty</h2>}
                             </div>
                             {cartItems.map((product) => (
                                 <div key={product.id}>
-                                    <div class="card mb-3 ">
-                                        <img src={product.image} class="cart-image" alt={product.name} />
+                                    <div className="cart-grid border-dark">
+                                        <img src={product.image} className="cart-image" alt={product.name} />
                                         <div class="card-body d-inline">
-                                            <h5 class="card-title">{product.name}:</h5>
-                                            {product.qty} x ${(product.qty * product.price).toFixed(2)}
+                                            <h5 class="card-title">{product.name}:
+                                            {product.qty} x ${(product.qty * product.price).toFixed(2)} </h5>
                                         </div>
                                         <div className='d-inline'>
                                             {/* {product.qty} x ${(product.qty * product.price).toFixed(2)} */}
@@ -47,6 +47,7 @@ function Cart({ cartItems, onAdd, onRemove }) {
                                             </button>
                                         </div>
                                     </div>
+                                    {/* <hr /> */}
                                 </div>
                             ))}
                             {cartItems.length !== 0 && (
